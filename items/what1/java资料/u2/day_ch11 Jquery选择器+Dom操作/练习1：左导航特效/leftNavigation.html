@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>左导航特效</title>
+<style type="text/css">
+*{
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+}
+#nav .navsBox{
+	width: 160px;
+}
+#nav .navsBox .firstNav{
+	height:45px;
+	line-height:45px;
+	background-color:#EBEBEB;
+	border-left:10px solid #FE705C;
+	padding-left:20px;
+	width:130px;
+	font-weight:bold;
+	cursor: pointer;
+}
+#nav .navsBox ul{
+	display:none;
+	list-style:none; 
+}
+#nav .navsBox ul li{
+	display:block;
+	height:45px;
+	line-height:45px;
+	padding-left:70px;
+	width:90px; 
+	background-color:#F2F2F2;
+	background-position:33px 7px;
+	background-repeat:no-repeat;
+}
+
+#nav .navsBox ul li.jedh{
+	background-image:url("./images/huan.gif");
+}
+#nav .navsBox ul li.jlbbyk{
+	background-image:url("./images/you.gif");
+}
+#nav .navsBox ul li.jwljb{
+	background-image:url("./images/gouwu.gif");
+}
+#nav .navsBox ul li.mrljb{
+	background-image:url("./images/meiri.gif");
+}
+#nav .navsBox ul li.vipjtj{
+	background-image:url("./images/zhe.gif");
+}
+#nav .navsBox ul li.onbg{
+	background-color:#F9DBD1;
+}
+
+#nav .navsBox ul li a{
+	color:#000;
+	text-decoration:none;	
+}
+
+
+</style>
+<script type="text/javascript" src="./js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript">
+/*$(document).ready(function () {
+	$("#nav .navsBox .firstNav").click(function(){
+		var $list = $("#nav .navsBox ul");
+		if($list.css("display") == "block")
+			$list.css("display","none");
+		else
+			$list.css("display","block");
+	});
+    $("#nav .navsBox ul li").mouseover(function(){
+    	$(this).addClass("onbg");  //为该元素添加类样式.onbg
+    }).mouseout(function(){
+    	$(this).removeClass("onbg");//为该元素移除类样式.onbg
+    });
+*/
+});
+</script>
+</head>
+<body>
+<div id="nav"> 
+	 <div class="navsBox">
+	 	<div class="firstNav">购物特权</div> 
+		<ul>
+			<li class="jedh"><a href="#">全额兑换</a></li>
+			<li class="jlbbyk"><a href="#">俱乐部包邮卡</a></li>
+			<li class="jwljb"><a href="#">购物领金币</a></li>
+			<li class="mrljb"><a href="#">每日领金币</a></li>
+			<li class="vipjtj"><a href="#">VIP阶梯价</a></li>
+		</ul>
+	 </div> 
+</div>
+</body>
+</html>

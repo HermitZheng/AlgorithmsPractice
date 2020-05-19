@@ -1,0 +1,23 @@
+作业一:在上次年级管理的系统中进行代码改造
+   要求:使用BaseDao工具类执行sql  简化jdbc代码执行
+
+作业二:在年级管理系统上添加登入功能.
+  登入成功进入年级管理系统，登入不成功不许进入年级管理系统
+  用户信息表如下:
+ --  创建表
+ CREATE TABLE `users` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `uname` varchar(15) NOT NULL,
+  `upwd` varchar(15) NOT NULL,
+  `tel` char(11) DEFAULT NULL,
+  `email` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8;
+
+--  给用户表添加测试数据
+insert  into `users`(`uid`,`uname`,`upwd`,`tel`,`email`) values (101,'wjb','123','1234567','sdfsfd@.com'),(102,'oldwang','456','1234567','sdfsfd@.com'),(103,'xiaowang','123456','1234567','sdfsfd@.com');
+
+
+作业三:看JDBC封装类BaseDao
+
+

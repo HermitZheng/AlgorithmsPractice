@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script language="javascript">
+function add(){
+var show=document.getElementById("div1");
+show.innerHTML=show.innerHTML+"我是新的加留言";
+}
+</script>
+</head>
+
+<body>
+我要留言
+<form id="form1" name="form1" method="post" action="">
+  <p>标题:
+    <label>
+    <input type="text" name="textfield" id="textfield" />
+    </label>
+  </p>
+  <p>内容:  
+    <label>
+    <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea>
+    </label>
+    <label>
+    <input type="button" name="button" id="button" value="添加留言" onclick="add();" />
+    </label>
+  </p>
+</form>
+所有留言如下:添加留言如果如下: 
+<div id="div1" style="border:red solid 1px; padding:10px;">
+  <table width="100%" border="1">
+       <tr>
+         <td width="56%">标题:</td>
+         <td width="200">时间:</td>
+       </tr>
+       <tr>
+         <td colspan="2">内容:</td>
+       </tr>
+     </table>
+</div>
+</body>
+</html>
