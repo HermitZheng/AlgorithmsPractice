@@ -1,3 +1,5 @@
+package Search;
+
 import java.util.Scanner;
 
 /**

@@ -6,6 +6,15 @@ package Bit;
  */
 public class AppearOnce {
 
+    public static void main(String[] args) {
+        int[] array = {3, 1, 2};
+        int[] num1 = new int[1], num2 = new int[1];
+        new AppearOnce().FindNumsAppearOnce(array, num1, num2);
+        System.out.println(num1[0]);
+        System.out.println(num2[0]);
+
+    }
+
     public void FindNumsAppearOnce(int [] array,int num1[] , int num2[]) {
         int len = array.length;
         if (len == 2) {
