@@ -9,6 +9,6 @@ public class Test {
 
     public static void main(String[] args) {
 //        Stack<Integer> stack = new Stack<>();
-        System.out.println();
+        System.out.println(Math.pow(10,9)+7+"");
     }
 }
