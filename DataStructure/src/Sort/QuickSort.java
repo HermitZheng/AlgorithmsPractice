@@ -8,8 +8,8 @@ public class QuickSort {
 
         quickSort(arr1, 0, arr1.length - 1);
 
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for (int i = 0; i < arr1.length; i++) {
+            System.out.print(arr1[i] + " ");
         }
     }
 

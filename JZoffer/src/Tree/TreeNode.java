@@ -7,11 +7,13 @@ package Tree;
 public class TreeNode {
 
     public int value = 0;
+    public int val;
     public TreeNode left = null;
     public TreeNode right = null;
 
     public TreeNode(int value) {
         this.value = value;
+        this.val = value;
     }
 
     @Override

@@ -1,7 +1,14 @@
 package Tree;
 
+import java.util.Arrays;
+import java.util.Stack;
+
 /**
  * 输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。
+ *  * 例如：
+ *  * 前序遍历 preorder = [3,9,20,15,7]
+ *  * 中序遍历 inorder = [9,3,15,20,7]
+ *
  * @author zhuqiu
  * @date 2020/3/13
  */
@@ -37,5 +44,47 @@ public class reConstruct {
             }
         }
         return node;
+    }
+
+    // 简化递归
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        int len = preorder.length;
+        if (preorder.length==0 || inorder.length==0) return null;
+
+        TreeNode root = new TreeNode(preorder[0]);
+        int i=0;
+        while (i < len && preorder[0] != inorder[i]) i++;
+
+        root.left = buildTree(Arrays.copyOfRange(preorder, 1, i+1), Arrays.copyOfRange(inorder, 0, i));
+        root.right = buildTree(Arrays.copyOfRange(preorder, i+1, len), Arrays.copyOfRange(inorder, i+1, len));
+
+        return root;
+    }
+
+    // 迭代
+    public TreeNode buildTree_iter(int[] preorder, int[] inorder) {
+        int len = preorder.length;
+        if (len == 0 || inorder.length == 0) return null;
+
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode root = new TreeNode(preorder[0]);
+        stack.push(root);
+        int inorder_index = 0;
+
+        for (int i = 1; i < len; i++) {
+            TreeNode node = stack.peek();
+            if (node.val != inorder[inorder_index]) {
+                node.left = new TreeNode(preorder[i]);
+                stack.push(node.left);
+            } else {
+                while (!stack.isEmpty() && stack.peek().val == inorder[inorder_index]) {
+                    node = stack.pop();
+                    inorder_index++;
+                }
+                node.right = new TreeNode(preorder[i]);
+                stack.push(node.right);
+            }
+        }
+        return root;
     }
 }

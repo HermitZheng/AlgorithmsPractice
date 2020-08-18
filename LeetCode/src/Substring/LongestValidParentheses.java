@@ -52,4 +52,39 @@ public class LongestValidParentheses {
         }
         return maxans;
     }
+
+    public int longestValidParentheses_stack_2(String s) {
+        int len = s.length();
+        if (len == 0) {
+            return 0;
+        }
+        String[] split = s.split("");
+        int[] stack = new int[len];
+        boolean[] mark = new boolean[len];
+        int top = -1;
+
+        for (int i=0; i<len; i++) {
+            if (split[i] == "(") {
+                stack[++top] = i;
+            } else if (split[i] == ")") {
+                if (top == -1) continue;
+                else {
+                    int start = stack[top--];
+                    mark[i] = true;
+                    mark[start] = true;
+                }
+            }
+        }
+
+        int count = 0, res = 0;
+        for (int i=0; i<len; i++) {
+            if (mark[i]) count++;
+            else {
+                res = Math.max(count, res);
+                count = 0;
+            }
+        }
+        res = Math.max(count, res);
+        return res;
+    }
 }

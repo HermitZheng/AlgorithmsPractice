@@ -3,6 +3,12 @@ package Tree;
 import java.util.Arrays;
 
 /**
+ * JZOffer 07
+ *
+ * 例如：
+ * 前序遍历 preorder = [3,9,20,15,7]
+ * 中序遍历 inorder = [9,3,15,20,7]
+ *
  * @author zhuqiu
  * @date 2020/5/22
  */
@@ -31,5 +37,9 @@ public class BuildByPreIn {
         root.right = buildTree(Arrays.copyOfRange(preorder, i+1, len), Arrays.copyOfRange(inorder, i+1, len));
 
         return root;
+    }
+
+    public TreeNode buildTree_iter(int[] preorder, int[] inorder) {
+        return null;
     }
 }
