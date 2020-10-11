@@ -45,4 +45,5 @@ public class MergeLink {
         result = result.next;
         return result;
     }
+
 }

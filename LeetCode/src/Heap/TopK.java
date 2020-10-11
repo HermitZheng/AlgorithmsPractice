@@ -17,6 +17,10 @@ public class TopK {
             countMap.put(num, countMap.getOrDefault(num, 0) + 1);
         }
 
+        for (Map.Entry<Integer, Integer> entry : countMap.entrySet()) {
+
+        }
+
         // 初始化堆，记录最不频繁的元素
         PriorityQueue<Integer> heap =   //(n1, n2) -> countMap.get(n1) - countMap.get(n2)
                 new PriorityQueue<Integer>(Comparator.comparingInt(countMap::get));

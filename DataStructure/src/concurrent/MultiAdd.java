@@ -11,18 +11,18 @@ public class MultiAdd {
     static int i = 0;
 
     public static void main(String[] args) {
-        test_atomic();
+        test_syn();
     }
 
     public static void test_syn() {
         Thread t1 = new Thread(() -> {
-            for (int j = 0; j < 10; j++) {
+            for (int j = 0; j < 1000; j++) {
                 System.out.println(i++);
             }
         });
 
         Thread t2 = new Thread(() -> {
-            for (int j = 0; j < 10; j++) {
+            for (int j = 0; j < 1000; j++) {
                 System.out.println(i++);
             }
         });

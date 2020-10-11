@@ -8,6 +8,28 @@ package Link;
 
 public class ReverseLink {
 
+    public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode dummy = new ListNode(-1), pre = dummy, next;
+        dummy.next = head;
+        int len = 0;
+        while (head != null) {
+            len++;
+            head = head.next;
+        }
+        head = dummy.next;
+        for (int i = 0; i < len / k; i++) {
+            for (int j = 0; j < k; j++) {
+                next = head.next;
+                head.next = next.next;
+                next.next = pre.next;
+                pre.next = next;
+            }
+            pre = head;
+            head = head.next;
+        }
+        return dummy.next;
+    }
+
     public ListNode ReverseList(ListNode head) {
         if (head == null || head.next == null){
             return head;
@@ -41,7 +63,6 @@ public class ReverseLink {
             pre = temp;
         }
         return pre;
-
     }
 
 
