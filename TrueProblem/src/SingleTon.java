@@ -11,7 +11,7 @@ public class SingleTon {
          B在外层等待，A创建完成，释放锁，B拿到锁，进行第二层if判断，条件不成立，结束释放锁。C调用getSingleton时第一层判断不成立，直接拿到singleton对象返回，避免进入锁，减少性能开销。
          */
         if (singleTon == null){
-            synchronized (SingleTon.class){
+            fakeSyntax (SingleTon.class){
                 if (singleTon == null) {
                     singleTon = new SingleTon();
                 }

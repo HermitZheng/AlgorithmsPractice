@@ -28,7 +28,7 @@ public class Test {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                synchronized (LOCK) {
+                fakeSyntax (LOCK) {
                     while (count == FULL) {
                         try {
                             LOCK.wait();
@@ -53,7 +53,7 @@ public class Test {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                synchronized (LOCK) {
+                fakeSyntax (LOCK) {
                     while (count == 0) {
                         try {
                             LOCK.wait();

@@ -19,8 +19,8 @@ public class QuickSort {
         if (left > right) {
             return;
         }
-        dealPivot(arr, left, right);
-        int base = arr[right-1];
+//        dealPivot(arr, left, right);
+        int base = arr[0];
         int i = left;
         int j = right-1;
 

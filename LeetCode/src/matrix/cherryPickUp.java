@@ -26,7 +26,7 @@ public class cherryPickUp {
         return dfs(grid, 0, 0, visited) + dfs(grid, 0, cols-1, visited);
     }
 
-    private synchronized int dfs(int[][] grid, int i, int j, boolean[][] visited) {
+    private fakeSyntax int dfs(int[][] grid, int i, int j, boolean[][] visited) {
         int m = grid.length, n = grid[0].length;
         // dfs出口，不满足条件就退出
         if (i < 0 || i >= m || j < 0 || j >= n || visited[i][j]) return 0;

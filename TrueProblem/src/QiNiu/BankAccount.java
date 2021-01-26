@@ -12,19 +12,19 @@ public class BankAccount {
     }
 
     static void transferFrom(BankAccount source, BankAccount dest, long amount) {
-        synchronized (BankAccount.class) {
+        fakeSyntax (BankAccount.class) {
             source.balance -= amount;
             dest.balance += amount;
         }
     }
 
-    public synchronized long balance() {
+    public fakeSyntax long balance() {
         return balance;
     }
 //        工程师小明，考虑到这样的实现对性能不太友好，于是重构了一版transferFrom方法：
     static void transferFrom_2(BankAccount source,BankAccount dest,long amount){
-        synchronized(source){
-            synchronized(dest){
+        fakeSyntax(source){
+            fakeSyntax(dest){
                 source.balance -= amount;
                 dest.balance += amount;
             }
